@@ -3,21 +3,38 @@ import {
   SafeAreaView,
   StyleSheet,
   Text,
-  View,
   StatusBar,
 } from "react-native";
 import { Searchbar } from "react-native-paper";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
+import styled from "styled-components/native";
+
+//This makes sure it works both Android and iOS
+const SafeArea = styled(SafeAreaView)`
+  ${StatusBar.currentHeight && `padding-top: ${StatusBar.currentHeight}px`};
+  flex: 1;
+`;
+
+const SearchContainer = styled.View`
+  padding: 16px;
+  background-color: green;
+`;
+
+const RestaurantListContainer = styled.View`
+  padding: 16px;
+  background-color: blue;
+  flex: 1;
+`;
 
 export const RestaurantsScreen = () => (
-  <SafeAreaView style={styles.container}>
-    <View style={styles.search}>
+  <SafeArea style={styles.container}>
+    <SearchContainer style={styles.search}>
       <Searchbar placeholder="Search" />
-    </View>
-    <View style={styles.list}>
+    </SearchContainer>
+    <RestaurantListContainer style={styles.list}>
       <RestaurantInfoCard />
-    </View>
-  </SafeAreaView>
+    </RestaurantListContainer>
+  </SafeArea>
 );
 
 const styles = StyleSheet.create({
@@ -25,6 +42,4 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
-  search: { padding: 16, backgroundColor: "green" },
-  list: { padding: 16, backgroundColor: "blue", flex: 1 },
 });
