@@ -48,10 +48,10 @@ const sizeVariant = {
 };
 
 const positionVariant = {
-  top: "marginTop",
-  left: "marginLeft",
-  right: "marginRight",
-  bottom: "marginBottom",
+  top: "margin-top",
+  left: "margin-left",
+  right: "margin-right",
+  bottom: "margin-bottom",
 };
 
 const getVariant = (position, size, theme) => {
@@ -68,9 +68,7 @@ const getVariant = (position, size, theme) => {
 
 //Android RCTView fix
 export const SpacerView = styled.View`
-  ${({ variant }) => {
-    variant;
-  }};
+  ${({ variant }) => variant}
 `;
 
 export const Spacer = ({ position, size, children }) => {
