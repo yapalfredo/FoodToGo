@@ -1,10 +1,4 @@
-import {
-  Platform,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  StatusBar,
-} from "react-native";
+import { Platform, SafeAreaView, StyleSheet, StatusBar } from "react-native";
 import { Searchbar } from "react-native-paper";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import styled from "styled-components/native";
