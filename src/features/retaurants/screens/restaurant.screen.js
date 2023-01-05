@@ -10,11 +10,6 @@ const SearchContainer = styled.View`
   padding: ${(props) => props.theme.space[3]};
 `;
 
-const RestaurantListContainer = styled.View`
-  padding: ${(props) => props.theme.space[3]};
-  flex: 1;
-`;
-
 const RestaurantList = styled(FlatList).attrs({
   contentContainerStyle: {
     padding: 16,
