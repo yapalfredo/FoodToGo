@@ -46,11 +46,14 @@ function SettingsScreen() {
 }
 
 const createScreenOptions = ({ route }) => {
-  const iconName = TAB_ICON[route.name];
   return {
-    tabBarIcon: ({ color, size }) => (
-      <Ionicons name={iconName} size={size} color={color} />
-    ),
+    tabBarIcon: ({ focused, color, size }) => {
+      const iconName = focused
+        ? TAB_ICON[route.name]
+        : `${TAB_ICON[route.name]}-outline`;
+
+      return <Ionicons name={iconName} size={size} color={color} />;
+    },
     headerShown: false,
     tabBarActiveTintColor: "tomato",
     tabBarInactiveTintColor: "gray",
