@@ -6,7 +6,9 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "eject": "expo eject",
+    "lint": "eslint . --ext .js"
   },
   "dependencies": {
     "@expo-google-fonts/lato": "^0.2.2",
@@ -26,7 +28,10 @@
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "@react-native-community/eslint-config": "^3.2.0",
+    "eslint": "^8.31.0",
+    "prettier": "^2.8.1"
   },
   "resolutions": {
     "styled-components": "^5"
