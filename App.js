@@ -2,7 +2,7 @@ import React from "react";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
-import { NavContainer } from "./src/infrastructure/navigation/";
+import { Navigation } from "./src/infrastructure/navigation";
 
 import { LocationContextProvider } from "./src/services/location/location.context";
 //Loading google fonts
@@ -33,7 +33,7 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <LocationContextProvider>
           <RestaurantsContextProvider>
-            <NavContainer />
+            <Navigation />
           </RestaurantsContextProvider>
         </LocationContextProvider>
         <ExpoStatusBar style="auto" />

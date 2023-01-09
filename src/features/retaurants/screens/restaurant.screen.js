@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ActivityIndicator, MD2Colors } from "react-native-paper";
-import { FlatList } from "react-native";
+import { FlatList, Pressable } from "react-native";
 import styled from "styled-components/native";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
@@ -27,7 +27,7 @@ const Loading = styled(ActivityIndicator).attrs({
   color: MD2Colors.blue300,
 })``;
 
-export const RestaurantsScreen = () => {
+export const RestaurantsScreen = ({ navigation }) => {
   const { restaurants, isLoading } = useContext(RestaurantsContext);
 
   return (
@@ -43,9 +43,15 @@ export const RestaurantsScreen = () => {
           data={restaurants}
           renderItem={({ item }) => {
             return (
-              <Spacer position="bottom" size="large">
-                <RestaurantInfoCard restaurant={item} />
-              </Spacer>
+              <Pressable
+                onPress={() => {
+                  navigation.navigate("RestaurantDetail");
+                }}
+              >
+                <Spacer position="bottom" size="large">
+                  <RestaurantInfoCard restaurant={item} />
+                </Spacer>
+              </Pressable>
             );
           }}
           keyExtractor={(item) => item.name}
