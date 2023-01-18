@@ -9,6 +9,7 @@ import { Spacer } from "../../../components/spacer/spacer.component";
 import { SafeArea } from "../../../components/utility/safe-area.component";
 
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
+import { FavouritesContext } from "../../../services/favourites/favourites.context";
 
 import { Search } from "../components/search.component";
 import { FavouritesBar } from "../../../components/favourites/favourites-bar.component";
@@ -34,6 +35,7 @@ const Loading = styled(ActivityIndicator).attrs({
 
 export const RestaurantsScreen = ({ navigation }) => {
   const { restaurants, isLoading } = useContext(RestaurantsContext);
+  const { favourites } = useContext(FavouritesContext);
   const [isToggled, setIsToggled] = useState(false);
 
   return (
@@ -48,7 +50,7 @@ export const RestaurantsScreen = ({ navigation }) => {
           isFavouritesToggled={isToggled}
           onFavouritesToggle={() => setIsToggled(!isToggled)}
         />
-        {isToggled && <FavouritesBar />}
+        {isToggled && <FavouritesBar favourites={favourites} />}
         <RestaurantList
           data={restaurants}
           renderItem={({ item }) => {
