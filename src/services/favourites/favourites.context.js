@@ -13,6 +13,7 @@ export const FavouritesContextProvider = ({ children }) => {
     const newFavourites = favourites.filter(
       (x) => x.placeId !== restaurant.placeId
     );
+
     setFavourites(newFavourites);
   };
 
