@@ -20,7 +20,7 @@ export const FavouritesBar = ({ favourites, onNavigate }) => (
         return (
           <Spacer position="left" size="medium" key={key}>
             <TouchableOpacity
-              onPress={onNavigate("RestaurantDetail", restaurant)}
+              onPress={() => onNavigate("RestaurantDetail", restaurant)}
             >
               <CompactRestaurantInfo restaurant={restaurant} />
             </TouchableOpacity>
