@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
 import { Navigation } from "./src/infrastructure/navigation";
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps } from "firebase/app";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 import { LocationContextProvider } from "./src/services/location/location.context";
 //Loading google fonts
@@ -24,9 +25,24 @@ const firebaseConfig = {
   appId: "1:104267053031:web:6cac4c951ccb2cbe7d2f42",
 };
 
-const app = initializeApp(firebaseConfig);
+if (!getApps().length) {
+  const app = initializeApp(firebaseConfig);
+}
 
 export default function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    signInWithEmailAndPassword(getAuth(), "test@test.com", "test123")
+      .then((userCredential) => {
+        const user = userCredential.user;
+        setIsAuthenticated(true);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
+
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
   });
@@ -35,9 +51,10 @@ export default function App() {
     Lato_400Regular,
   });
 
-  if (!oswaldLoaded || !latoLoaded) {
-    return null;
-  }
+  if (!oswaldLoaded || !latoLoaded) null;
+
+  if (!isAuthenticated) null;
+
   return (
     // <> allows you wrap multiple components
     // side by side without having to wrap them
