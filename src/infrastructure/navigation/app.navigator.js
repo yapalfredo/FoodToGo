@@ -1,11 +1,12 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
+
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Text } from "react-native";
 import { SafeArea } from "../../components/utility/safe-area.component";
 import { Ionicons } from "@expo/vector-icons";
 import { RestaurantsNavigator } from "./restaurants.navigator";
 import { MapScreen } from "../../features/map/screens/map.screen";
+import { AccountNavigator } from "./account.navigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -39,11 +40,9 @@ const createScreenOptions = ({ route }) => {
 };
 
 export const AppNavigator = () => (
-  <NavigationContainer>
-    <Tab.Navigator screenOptions={createScreenOptions}>
-      <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
-      <Tab.Screen name="Map" component={MapScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
-    </Tab.Navigator>
-  </NavigationContainer>
+  <Tab.Navigator screenOptions={createScreenOptions}>
+    <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
+    <Tab.Screen name="Map" component={MapScreen} />
+    <Tab.Screen name="Settings" component={SettingsScreen} />
+  </Tab.Navigator>
 );
