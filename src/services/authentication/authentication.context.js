@@ -15,7 +15,6 @@ export const AuthenticationContextProvider = ({ children }) => {
       .then((u) => {
         setUser(u);
         setIsLoading(false);
-        console.log("successful");
       })
       .catch((e) => {
         setIsLoading(false);
