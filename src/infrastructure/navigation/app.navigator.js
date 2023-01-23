@@ -6,7 +6,6 @@ import { SafeArea } from "../../components/utility/safe-area.component";
 import { Ionicons } from "@expo/vector-icons";
 import { RestaurantsNavigator } from "./restaurants.navigator";
 import { MapScreen } from "../../features/map/screens/map.screen";
-import { AccountNavigator } from "./account.navigator";
 
 const Tab = createBottomTabNavigator();
 
