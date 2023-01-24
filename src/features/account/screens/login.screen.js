@@ -7,6 +7,8 @@ import {
   AccountCover,
   AccountContainer,
   AuthButton,
+  ErrorContainer,
+  Title,
 } from "../components/account.styles";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 
@@ -18,6 +20,7 @@ export const LoginScreen = ({ navigation }) => {
   return (
     <AccountBackground>
       <AccountCover />
+      <Title>Meals To Go</Title>
       <AccountContainer>
         <LoginInput
           label="Email"
@@ -38,9 +41,9 @@ export const LoginScreen = ({ navigation }) => {
           onChangeText={(p) => setPassword(p)}
         />
         {error && (
-          <Spacer size="large">
+          <ErrorContainer size="large">
             <Text variant="error">{error}</Text>
-          </Spacer>
+          </ErrorContainer>
         )}
         <Spacer size="large" />
         <AuthButton
@@ -50,6 +53,9 @@ export const LoginScreen = ({ navigation }) => {
           Login
         </AuthButton>
       </AccountContainer>
+      <Spacer size="large">
+        <AuthButton onPress={() => navigation.goBack()}>Back</AuthButton>
+      </Spacer>
     </AccountBackground>
   );
 };
