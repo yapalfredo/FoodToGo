@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Text } from "../../../components/typography/text.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
+import { ActivityIndicator, MD2Colors } from "react-native-paper";
 import {
   AccountBackground,
   LoginInput,
@@ -16,7 +17,7 @@ export const RegisterScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatedPassword, setRepeatedPassword] = useState("");
-  const { onRegister, error } = useContext(AuthenticationContext);
+  const { onRegister, isLoading, error } = useContext(AuthenticationContext);
 
   return (
     <AccountBackground>
@@ -55,12 +56,16 @@ export const RegisterScreen = ({ navigation }) => {
           </ErrorContainer>
         )}
         <Spacer size="large" />
-        <AuthButton
-          onPress={() => onRegister(email, password, repeatedPassword)}
-          icon="email"
-        >
-          Register
-        </AuthButton>
+        {!isLoading ? (
+          <AuthButton
+            onPress={() => onRegister(email, password, repeatedPassword)}
+            icon="email"
+          >
+            Register
+          </AuthButton>
+        ) : (
+          <ActivityIndicator animating={true} color={MD2Colors.blue300} />
+        )}
       </AccountContainer>
       <Spacer size="large">
         <AuthButton onPress={() => navigation.goBack()}>Back</AuthButton>
