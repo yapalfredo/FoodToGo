@@ -1,4 +1,4 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
 
 export const AuthenticationContext = createContext();
 
@@ -15,7 +15,9 @@ export const AuthenticationContextProvider = ({ children }) => {
   const [error, setError] = useState(null);
 
   //check current session
-  checkAuthState(setUser, setIsLoading);
+  useEffect(() => {
+    checkAuthState(setUser, setIsLoading);
+  }, []);
 
   const onLogin = (email, password) => {
     setIsLoading(true);
