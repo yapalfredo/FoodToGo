@@ -23,7 +23,7 @@ export const AuthenticationContextProvider = ({ children }) => {
     setIsLoading(true);
     loginRequest(email, password)
       .then((u) => {
-        setUser(u);
+        setUser(u.user);
         setIsLoading(false);
       })
       .catch((e) => {
@@ -40,7 +40,7 @@ export const AuthenticationContextProvider = ({ children }) => {
     }
     registerRequest(email, password)
       .then((u) => {
-        setUser(u);
+        setUser(u.user);
         setIsLoading(false);
       })
       .catch((e) => {
