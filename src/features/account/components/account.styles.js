@@ -4,7 +4,7 @@ import { Button, TextInput } from "react-native-paper";
 import { Text } from "../../../components/typography/text.component";
 
 export const AccountBackground = styled.ImageBackground.attrs({
-  source: require("../../../assets/home_bg.jpg"),
+  source: require("../../../../assets/home_bg.jpg"),
 })`
   flex: 1;
   align-items: center;
@@ -15,11 +15,11 @@ export const AccountCover = styled.View`
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.5);
 `;
 
 export const AccountContainer = styled.View`
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.3);
   padding: ${(props) => props.theme.space[4]};
   margin-top: ${(props) => props.theme.space[2]};
 `;
@@ -45,4 +45,12 @@ export const ErrorContainer = styled.View`
   align-self: center;
   margin-top: ${(props) => props.theme.space[2]};
   margin-bottom: ${(props) => props.theme.space[2]};
+`;
+
+export const AnimationWrapper = styled.View`
+  width: 100%;
+  height: 30%;
+  position: absolute;
+  top: 30px;
+  padding: ${(props) => props.theme.space[2]};
 `;
