@@ -36,7 +36,9 @@ export default function App() {
     Lato_400Regular,
   });
 
-  if (!oswaldLoaded || !latoLoaded) null;
+  if (!oswaldLoaded || !latoLoaded) {
+    return null;
+  }
 
   return (
     // <> allows you wrap multiple components
