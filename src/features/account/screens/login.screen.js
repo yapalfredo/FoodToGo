@@ -22,7 +22,7 @@ export const LoginScreen = ({ navigation }) => {
   return (
     <AccountBackground>
       <AccountCover />
-      <Title>Meals To Go</Title>
+      <Title>Food To Go</Title>
       <AccountContainer>
         <LoginInput
           label="Email"

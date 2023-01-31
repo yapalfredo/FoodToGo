@@ -21,7 +21,7 @@ export const AccountScreen = ({ navigation }) => {
           loop
         />
       </AnimationWrapper>
-      <Title>Meals To Go</Title>
+      <Title>Food To Go</Title>
       <AccountContainer>
         <AuthButton
           onPress={() => navigation.navigate("Login")}
