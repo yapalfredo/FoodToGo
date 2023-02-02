@@ -15,7 +15,7 @@ Styled Components <br>
 
 
 ### Limitations
-- Firebase Functions feature was locally implemented (Not on active on cloud) <br>
+- Firebase Functions feature was locally implemented (Not active on cloud) <br>
 - Restaurants and Places data are mock data provided by ZTM academy
 
 ### DEMO
