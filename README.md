@@ -12,3 +12,11 @@ React Navigation <br>
 Firebase <br>
 Lottie <br>
 Styled Components <br>
+
+
+### Limitations
+- Locally Firebase Functions feature was locally implemented (Not on active on cloud) <br>
+- Restaurants and Places data are mock data provided by ZTM academy
+
+### DEMO
+https://user-images.githubusercontent.com/36459847/216456918-bb3e4119-8aa5-4d3c-bcc8-a5542503fe21.mp4
