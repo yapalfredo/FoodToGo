@@ -16,4 +16,5 @@ web-build/
 
 */node_modules/**/*
 
-*/firebase-debug.log
+firebase-debug.*.log
+firebase-debug.log
