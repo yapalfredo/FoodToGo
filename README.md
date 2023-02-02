@@ -2,7 +2,8 @@
 
 ### Created using React Native and Expo
 
-credit goes to ZTM Academy (Andrei Neagoie & Mo Binni)
+This app is from the guided React Native project "MealsToGo" by ZTM Academy. <br>
+Credit goes to them especially Andrei Neagoie & Mo Binni. <br>
 
 ### Libraries and tools used for this App
 
