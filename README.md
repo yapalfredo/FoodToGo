@@ -22,5 +22,6 @@ Styled Components <br>
 ### DEMO
 https://user-images.githubusercontent.com/36459847/216456918-bb3e4119-8aa5-4d3c-bcc8-a5542503fe21.mp4
 
-### Expo Demo Link
+
+## Expo Demo Link
 [https://expo.dev/@yapalfredo/FoodToGo](https://expo.dev/@yapalfredo/FoodToGo)
