@@ -17,11 +17,11 @@ Styled Components <br>
 
 ### Limitations
 - Firebase Functions feature was locally implemented (Not active on cloud) <br>
-- Restaurants and Places data are mock data provided by ZTM academy
-- -Antwerp
-- -San Francisco
-- -Chicago
-- -Toronto
+- Restaurants and Places data are mock data provided by ZTM academy:
+  - Antwerp
+  - San Francisco
+  - Chicago
+  - Toronto
 
 ### DEMO
 https://user-images.githubusercontent.com/36459847/216456918-bb3e4119-8aa5-4d3c-bcc8-a5542503fe21.mp4
