@@ -46,6 +46,7 @@
     "prettier": "^2.8.1"
   },
   "resolutions": {
+    "**/**/json5": "^2.2.3",
     "styled-components": "^5"
   },
   "private": true
